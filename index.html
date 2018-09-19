@@ -1,0 +1,232 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Technical Documentation Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="all_container">
+
+        <!-- a elements with class nav-link, one for every element main-section, se corresponden con los
+             header de main-section -->
+        <nav id="navbar">
+            <header>A brief introduction to Python</header>
+            <ul>
+                <a class="nav-link" href="#Introduction">
+                    <li>Introduction</li>
+                </a>
+                <a class="nav-link" href="#Comments">
+                    <li>Comments</li>
+                </a>
+                <a class="nav-link" href="#Numbers">
+                    <li>Numbers</li>
+                </a>
+                <a class="nav-link" href="#Strings">
+                    <li>Strings</li>
+                </a>
+                <a class="nav-link" href="#Lists">
+                    <li>Lists</li>
+                </a>
+                <a class="nav-link" href="#First_steps_towards_programming">
+                    <li>First steps towards programming</li>
+                </a>
+                <a class="nav-link" href="#Reference">
+                    <li>Reference</li>
+                </a>
+            </ul>
+        </nav>
+
+        <main id="main-doc">
+            <!-- id de las secciones se corresponde con el texto del header de cada seccion 
+                 10 parrafos, 5 code elements, 5 li en total-->
+            <section class="main-section" id="Introduction">
+                <header>Introduction</header>
+                <article>
+                    <p>Python is an interpreted high-level programming language for general-purpose programming.
+                        Created by Guido van Rossum and first released in 1991, Python has a design philosophy that
+                        emphasizes code readability, notably using significant whitespace. It provides constructs
+                        that enable clear programming on both small and large scales.</p>
+                    <p>Python enables programs to be written compactly and readably. Programs written in Python
+                        are typically much shorter than equivalent C, C++, or Java programs, for several reasons:</p>
+                    <ul>
+                        <li>the high-level data types allow you to express complex operations in a single statement;</li>
+                        <li>statement grouping is done by indentation instead of beginning and ending brackets;</li>
+                        <li>no variable or argument declarations are necessary.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="main-section" id="Comments">
+                <header>Comments</header>
+                <article>
+                    <p>Comments in Python start with the hash character, #, and extend to the end of the physical
+                        line. A comment may appear at the start of a line or following whitespace or code, but not
+                        within a string literal. A hash character within a string literal is just a hash
+                        character. You can see several examples below.</p>
+                    <code>    # this is the first comment
+    spam = 1  # and this is the second comment
+    # ... and now a third!
+    text = "# This is not a comment because it's inside quotes."</code>
+                </article>
+            </section>
+
+            <section class="main-section" id="Numbers">
+                <header>Numbers</header>
+                <article>
+                    <p>The interpreter acts as a simple calculator: you can type an expression at it and it
+                        will write the value. Expression syntax is straightforward: the operators +, -, * and /
+                        work just like in most other languages and parentheses can be used for grouping.
+                        For example:</p>
+                    
+                        <code>    >>> (50 - 5*6) / 4
+    5.0
+    >>> 8 / 5  # division always returns a floating point number
+    1.6
+    >>> 17 // 3  # floor division discards the fractional part
+    5
+    >>> 17 % 3  # the % operator returns the remainder of the division
+    2
+    >>> 5 ** 2  # 5 squared
+    25</code>
+                    <p>The integer numbers have type int, the ones with a fractional part have type float.
+                        The equal sign is used to assign a value to a variable. Afterwards, no result is displayed
+                        before the next interactive prompt:</p>
+                    <code>    >>> width = 20
+    >>> height = 5 * 9
+    >>> width * height
+    900</code>
+                </article>
+            </section>
+
+            <section class="main-section" id="Strings">
+                <header>Strings</header>
+                <article>
+                    <p>Besides numbers, Python can also manipulate strings, which can be expressed in several
+                        ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same
+                        result. \ can be used to escape quotes:</p>
+                    <code>    >>> 'spam eggs'  # single quotes
+    'spam eggs'
+    >>> 'doesn\'t'  # use \' to escape the single quote...
+    "doesn't"
+    >>> "doesn't"  # ...or use double quotes instead
+    "doesn't"
+    >>> '"Yes," they said.'
+    '"Yes," they said.'
+    >>> "\"Yes,\" they said."
+    '"Yes," they said.'
+    >>> '"Isn\'t," they said.'
+    '"Isn\'t," they said.'</code>
+                    <p>Strings can be concatenated (glued together) with the + operator, and repeated with *:</p>
+                    <code>    >>> # 3 times 'un', followed by 'ium'
+    >>> 3 * 'un' + 'ium'
+    'unununium'</code>
+                    <p>Strings can be indexed (subscripted), with the first character having index 0. There is
+                        no separate character type; a character is simply a string of size one:</p>
+                    <code>    >>> word = 'Python'
+    >>> word[0]  # character in position 0
+    'P'
+    >>> word[-1]  # last character
+    'n'</code>
+                    <p>In addition to indexing, slicing is also supported. While indexing is used to obtain
+                        individual characters, slicing allows you to obtain substring:</p>
+                    <code>    >>> word[0:2]  # characters from position 0 (included) to 2 (excluded)
+    'Py'
+    >>> word[2:5]  # characters from position 2 (included) to 5 (excluded)
+    'tho'</code>
+                </article>
+            </section>
+
+            <section class="main-section" id="Lists">
+                <header>Lists</header>
+                <article>
+                    <p>Python knows a number of compound data types, used to group together other values.
+                        The most versatile is the list, which can be written as a list of comma-separated values
+                        (items) between square brackets. Lists might contain items of different types, but usually
+                        the items all have the same type.</p>
+                    <code>    >>> squares = [1, 4, 9, 16, 25]
+    >>> squares
+    [1, 4, 9, 16, 25]</code>
+                    <p>Like strings (and all other built-in sequence type), lists can be indexed and sliced:</p>
+                    <code>    >>> squares[0]  # indexing returns the item
+    1
+    >>> squares[-1]
+    25
+    >>> squares[-3:]  # slicing returns a new list
+    [9, 16, 25]
+    >>> squares[:]  # returns a copy of the list
+    [1, 4, 9, 16, 25]</code>
+                    <p>Lists also support operations like concatenation:</p>
+                    <code>    >>> squares + [36, 49, 64, 81, 100]
+    [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code>
+                    <p>Unlike strings, which are immutable, lists are a mutable type, it is possible to change their
+                        content:</p>
+                    <code>    >>> cubes = [1, 8, 27, 65, 125]  # something's wrong here
+    >>> 4 ** 3  # the cube of 4 is 64, not 65!
+    64
+    >>> cubes[3] = 64  # replace the wrong value
+    >>> cubes
+    [1, 8, 27, 64, 125]</code>
+                    <p>You can also add new items at the end of the list, by using the append() method:</p>
+                    <code>    >>> cubes.append(216)  # add the cube of 6
+    >>> cubes.append(7 ** 3)  # and the cube of 7
+    >>> cubes
+    [1, 8, 27, 64, 125, 216, 343]</code>
+                </article>
+            </section>
+
+            <section class="main-section" id="First_steps_towards_programming">
+                <header>First steps towards programming</header>
+                <article>
+                    <p>Of course, we can use Python for more complicated tasks than adding two and two together.
+                        For instance, we can write an initial sub-sequence of the Fibonacci series as follows:</p>
+                    <code>    >>> # Fibonacci series:
+    ... # the sum of two elements defines the next
+    ... a, b = 0, 1
+    >>> while a < 10:
+    ...     print(a)
+    ...     a, b = b, a+b
+    ...
+    0
+    1
+    1
+    2
+    3
+    5
+    8</code>
+                    <p>This example introduces several new features.</p>
+                    <ul>
+                        <li>The first line contains a multiple assignment: the variables a and b simultaneously
+                            get the new values 0 and 1. On the last line this is used again.</li>
+                        <li>The while loop executes as long as the condition (here: a < 10) remains true.</li> <li>The
+                                body of the loop is indented: indentation is Python’s way of grouping statements.
+                                At the interactive prompt, you have to type a tab or space(s) for each indented line.</li>
+                        <li>The print() function writes the value of the argument(s) it is given. It differs
+                            from just writing the expression you want to write in the way it handles multiple
+                            arguments, floating point quantities, and strings.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <article>
+                    <ul>
+                        <li>All the documentation in this page is taken from
+                            <a href="https://docs.python.org/3/tutorial/index.html" target="_blank">
+                                the official documentation</a></li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
